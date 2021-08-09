@@ -115,6 +115,10 @@ def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, find, sk
                             '%s Would you like to continue scanning? [y/N] ' % que).lower()
                         if choice != 'y':
                             quit()
+                    else:
+                        #Skip prompt and terminate if --skip parameter is specified
+                        quit()
+
                 elif bestEfficiency > minEfficiency:
                     logger.red_line()
                     logger.good('Payload: %s' % loggerVector)
